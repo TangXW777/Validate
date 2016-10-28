@@ -1,0 +1,17 @@
+﻿一、一共两个文件，一个是没有css,一个有。
+
+二、index.jsp里面的<script>里面的messages的错误信息，是可以覆盖自定义错误($.validator.addMethod())里面的错误信息的，也就是说，当messages里面的错误信息不写，则自动调用method的错误信息。
+
+三、同理messages里面的required错误信息也会被表单元素里面的tip覆盖，但是tip不写，则没有提示功能。
+
+四、自定义验证信息写在jquery-validate-extends.js的$.validator.addMethod()方法里面。
+
+五、引入js的时候，必须先引入(jquery-2.2.3.js)，然后依次引入，正确顺序见给的文件。
+
+六、validate支持ajax验证，而且方法很简单，就是在remote里面加入type和url，甚至连参数都不用写，提交给servlet后用流输出( response.getWriter() )，返回true为正确，false为错误。
+
+七、使用validate一共需要四个js支持
+
+这是从网上看到的原始demo:http://www.jb51.net/article/85110.htm
+
+这个是一些用法：http://www.51xuediannao.com/js/jquery/jquery_validate/
